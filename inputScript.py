@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 import whois
 import datetime
+import favicon
 
 
 def url_having_ip(url):
@@ -118,8 +119,14 @@ def domain_registration(url):
         return 0
 
 def favicon(url):
-    #ongoing
-    return 0
+    try:
+        icon = favicon.get(url)
+        if(icon):
+            return 1
+        else:
+            return -1
+    except:
+        return 0
 
 def port(url):
     #ongoing
@@ -253,7 +260,17 @@ def abnormal_url(url):
     return 0
 
 def redirect(url):
-    #ongoing
+    try:
+        req = urllib2.Request(url=url, headers=headers)
+        resp = urllib2.urlopen(req, timeout=3)
+        redirected = resp.geturl() != url
+        if(not redirected):
+            return 1
+        else:
+            return -1 
+    except:
+        return 0
+    
     return 0
 
 def on_mouseover(url):
