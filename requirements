@@ -1,0 +1,9 @@
+Pillow==2.2.1
+matplotlib
+scikit-learn
+seaborn
+regex
+tldextract
+bs4
+whois
+  

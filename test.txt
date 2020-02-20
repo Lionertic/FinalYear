@@ -1,0 +1,9 @@
+http://justsayingbro.com/ncb/rcn.imse/rnr/abur.php
+
+sklearn
+
+pip install -U scikit-learn
+
+others
+
+pip install 
